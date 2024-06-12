@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8"/>
+        <title>Trig Function Graph</title>
+    </head>
+    <body onload="init()">
+        <input id="theta" type="range" min="0" max="360" value="0" onchange="update()"/>
+        中心角=<span id="degree">0</span>度<br/>
+        <canvas id="graph" width="600" height="600"></canvas>
+        <script src="./TrigFunctions.js"></script>
+    </body>
+</html>
