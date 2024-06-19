@@ -48,19 +48,28 @@ function repaint() {
     drawLine(-10, 0, 10, 0, "red");
     drawLine(0, -10, 0, 10, "red");
 
+    ctx.fillStyle = "gray";
+    ctx.globalAlpha = 0.5;
+    ctx.beginPath();
+    ctx.moveTo(0, 0);
+    ctx.lineTo(x0 * 25, -y0 * 25);
+    ctx.lineTo((x0 + x1)*25, -(y0 + y1)*25);
+    ctx.lineTo(x1 * 25, -y1 * 25);
+    ctx.fill();
+
     drawLine(0, 0, x0, y0, "blue");
     drawLine(0, 0, x1, y1, "green");
     ctx.restore();
 
-    let dot = x0 * x1 + y0 * y1;
+    let cross = x0 * y1 - y0 * x1;
     let sizeV1 = Math.sqrt(x0 * x0 + y0 * y0);
     let sizeV2 = Math.sqrt(x1 * x1 + y1 * y1);
-    let cosTheta = dot / (sizeV1 * sizeV2);
+    let sinTheta = cross / (sizeV1 * sizeV2);
     document.getElementById("v0").textContent = "(" + x0 + "." + y0 + ")";
     document.getElementById("v1").textContent = "(" + x1 + "." + y1 + ")";
-    document.getElementById("v2").textContent = dot;
+    document.getElementById("v2").textContent = cross;
     document.getElementById("v3").textContent = sizeV1
     document.getElementById("v4").textContent = sizeV2
-    document.getElementById("v5").textContent = cosTheta;
-    document.getElementById("v6").textContent = Math.acos(cosTheta) * 180 / Math.PI;
+    document.getElementById("v5").textContent = sinTheta;
+    document.getElementById("v6").textContent = Math.asin(sinTheta) * 180 / Math.PI;
 }
