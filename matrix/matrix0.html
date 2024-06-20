@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <title>matrix</title>
+        <style>
+            input {
+                width: 20px; text-align: center;
+            }
+        </style>
+    </head>
+    <body onload="init()">
+        <button onclick="mul()">mul</button>
+        <button onclick="add()">add</button>
+        <table>
+            <tr>
+                <td><input id="a" value="1"></td>
+                <td><input id="b" value="2"></td>
+                <td rowspan="2" id="operator">x</td>
+                <td><input id="e" value="1"></td>
+                <td><input id="f" value="0"></td>
+                <td rowspan="2">=</td>
+                <td><input id="i"></td>
+                <td><input id="j"></td>
+            </tr>
+            <tr>
+                <td><input id="c" value="3"></td>
+                <td><input id="d" value="4"></td>
+                <td><input id="g" value="0"></td>
+                <td><input id="h" value="1"></td>
+                <td><input id="k"></td>
+                <td><input id="l"></td>
+            </tr>
+        </table>
+    </body>
+    <script src="./matrix0.js"></script>
+</html>
